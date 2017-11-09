@@ -1483,8 +1483,8 @@ class jomres_obsolete_file_handling
 		$this->add_obs_file($this->dir_minicomponents.'j10501reviews.class.php');
 		$this->add_obs_file($this->dir_minicomponents.'j06000feature_not_available.class.php');
 		$this->add_obs_file($this->dir_minicomponents.'j00005asamodule_report_tasks.class.php');
-		$this->add_obs_file($this->dir_minicomponents.'j16000access_control.class.php');
-		$this->add_obs_file($this->dir_minicomponents.'j16000ajax_change_access_level.class.php');
+//		$this->add_obs_file($this->dir_minicomponents.'j16000access_control.class.php');
+//		$this->add_obs_file($this->dir_minicomponents.'j16000ajax_change_access_level.class.php');
 		$this->add_obs_file($this->dir_templates_bootstrap_administrator.'control_panel_menu_options.html');
 		$this->add_obs_file($this->dir_templates_bootstrap_administrator.'control_panel_menu_wrapper.html');
 		$this->add_obs_file($this->dir_classes.'jomres_performance_monitor.class.php');
