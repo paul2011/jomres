@@ -100,15 +100,12 @@ class jomres_obsolete_file_handling
         $this->add_obs_file($this->dir_minicomponents.'j00501jscalendar.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000test_unsubscribe.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j03200insertbooking_invoice.class.php');
-
         $this->add_obs_file($this->dir_minicomponents.'j06000sendbug.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000savenote.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06000saveCoupon.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000save_normalmode_tariffs.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000preview_email.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000listyourproperties.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000listoldbookings.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06000listCoupons.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000list_my_subscriptions.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000list_guests_invoices.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000handlereq_total.class.php');
@@ -116,10 +113,10 @@ class jomres_obsolete_file_handling
         $this->add_obs_file($this->dir_minicomponents.'j06000fe_stats.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000editnote.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000editinplace.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06000editCoupon.class.php');
+
         $this->add_obs_file($this->dir_minicomponents.'j06000delslideshowimages.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000deletenote.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06000deleteCoupon.class.php');
+
         $this->add_obs_file($this->dir_minicomponents.'j06000amendBooking.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000addnote.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j06000reportbug.class.php');
@@ -410,10 +407,6 @@ class jomres_obsolete_file_handling
         $this->add_obs_file($this->dir_minicomponents.'j16000paypal_settings.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j16000save_paypal_settings.class.php');
         // $this->add_obs_file($this->dir_minicomponents.'j00011manager_option_05_couponadmin.class.php'); // This file has now been re-added to Jomres, in a disabled state
-        $this->add_obs_file($this->dir_minicomponents.'j06002deleteCoupon.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06002editCoupon.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06002listCoupons.class.php');
-        $this->add_obs_file($this->dir_minicomponents.'j06002saveCoupon.class.php');
         // $this->add_obs_file($this->dir_minicomponents.'j10002listCustomFields.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j16000delete_custom_field.class.php');
         $this->add_obs_file($this->dir_minicomponents.'j16000edit_custom_field.class.php');
@@ -587,7 +580,7 @@ class jomres_obsolete_file_handling
         $this->add_obs_file($this->dir_images_large.'ContactCardDelete.png');
         $this->add_obs_file($this->dir_images_large.'ContactCardEdit.png');
         $this->add_obs_file($this->dir_images_large.'CopyItem.png');
-        $this->add_obs_file($this->dir_images_large.'couponAdmin.png');
+
         $this->add_obs_file($this->dir_images_large.'cron.png');
         $this->add_obs_file($this->dir_images_large.'Desktop.png');
         $this->add_obs_file($this->dir_images_large.'DownloadDisabled.png');
@@ -805,8 +798,7 @@ class jomres_obsolete_file_handling
         $this->add_obs_file($this->dir_templates_bootstrap_backend.'bootstrap_dashboard.html');
         $this->add_obs_file($this->dir_templates_bootstrap_backend.'edit_customertype.html');
         $this->add_obs_file($this->dir_templates_bootstrap_backend.'list_customertypes.html');
-        $this->add_obs_file($this->dir_templates_bootstrap_backend.'edit_coupon.html');
-        $this->add_obs_file($this->dir_templates_bootstrap_backend.'list_coupons.html');
+
         $this->add_obs_file($this->dir_templates_bootstrap_backend.'edit_extra.html');
         $this->add_obs_file($this->dir_templates_bootstrap_backend.'list_extras.html');
         $this->add_obs_file($this->dir_templates_bootstrap_backend.'edit_room_feature.html');
@@ -818,8 +810,7 @@ class jomres_obsolete_file_handling
 
         $this->add_obs_file($this->dir_templates_bootstrap3_backend.'edit_customertype.html');
         $this->add_obs_file($this->dir_templates_bootstrap3_backend.'list_customertypes.html');
-        $this->add_obs_file($this->dir_templates_bootstrap3_backend.'edit_coupon.html');
-        $this->add_obs_file($this->dir_templates_bootstrap3_backend.'list_coupons.html');
+
         $this->add_obs_file($this->dir_templates_bootstrap3_backend.'edit_extra.html');
         $this->add_obs_file($this->dir_templates_bootstrap3_backend.'list_extras.html');
         $this->add_obs_file($this->dir_templates_bootstrap3_backend.'edit_room_feature.html');
@@ -833,8 +824,7 @@ class jomres_obsolete_file_handling
         $this->add_obs_file($this->dir_templates_jqueryui_backend.'switch_property.html');
         $this->add_obs_file($this->dir_templates_jqueryui_backend.'edit_customertype.html');
         $this->add_obs_file($this->dir_templates_jqueryui_backend.'list_customertypes.html');
-        $this->add_obs_file($this->dir_templates_jqueryui_backend.'edit_coupon.html');
-        $this->add_obs_file($this->dir_templates_jqueryui_backend.'list_coupons.html');
+
         $this->add_obs_file($this->dir_templates_jqueryui_backend.'edit_extra.html');
         $this->add_obs_file($this->dir_templates_jqueryui_backend.'list_extras.html');
         $this->add_obs_file($this->dir_templates_jqueryui_backend.'edit_room_feature.html');
@@ -1483,8 +1473,7 @@ class jomres_obsolete_file_handling
 		$this->add_obs_file($this->dir_minicomponents.'j10501reviews.class.php');
 		$this->add_obs_file($this->dir_minicomponents.'j06000feature_not_available.class.php');
 		$this->add_obs_file($this->dir_minicomponents.'j00005asamodule_report_tasks.class.php');
-//		$this->add_obs_file($this->dir_minicomponents.'j16000access_control.class.php');
-//		$this->add_obs_file($this->dir_minicomponents.'j16000ajax_change_access_level.class.php');
+
 		$this->add_obs_file($this->dir_templates_bootstrap_administrator.'control_panel_menu_options.html');
 		$this->add_obs_file($this->dir_templates_bootstrap_administrator.'control_panel_menu_wrapper.html');
 		$this->add_obs_file($this->dir_classes.'jomres_performance_monitor.class.php');
