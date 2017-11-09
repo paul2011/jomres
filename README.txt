@@ -6,8 +6,8 @@ Run "install_jomres.php", and follow the info.
 ---------------------------
 
 Changes I made or Added:
-This is Jomres 9.9.15 with some new Plugins installed each day or week.
-These Plugins are now part of Jomres Core-Plugins. In the Plugin Manager you will not see these installed, but they are.
+
+These Plugins are now part of Jomres core-minicomponents. In the Plugin Manager you will not see these installed, but they are.
 
 Plugins Installed So Far:
 - Access Control
