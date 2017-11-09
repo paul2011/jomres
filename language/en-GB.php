@@ -12,6 +12,11 @@
 //#################################################################
 defined('_JOMRES_INITCHECK') or die('');
 //#################################################################
+jr_define('JOMRES_DELETEREGISTRYREBUILD', "Delete All Files & Dirs in Jomres Temp Dir");
+jr_define('JOMRES_DELETEREGISTRYREBUILD_NOTES', "Normally the Jomres plugin registry is rebuilt automatically whenever you view the plugin manager and add or remove a plugin, however it's possible that you cannot use these features for some reason, therefore you can use this function to delete & rebuild the registry manually. If you have access to the Plugin Manager and Upgrades feature then it's unlikely that you will need to use this function. You will need to delete & rebuild the plugin registry whenever you add a new mini-component and didn't use the Plugin Manager to add it.");
+jr_define('JOMRES_DELETEREGISTRYREBUILD_SUCCESS', "Registry Files Deleted Successfully!");
+jr_define('JOMRES_DELETEREGISTRYREBUILD_FAILURE', "There was an error deleteing the registry of minicomponents. You should check your Jomres error log to see if there is a record of what triggered the error.");
+
 jr_define('_JOMRES_COM_MR_QUICKRESDESC', 'Quick reservation');
 jr_define('_JOMRES_COM_MR_SHOWPROFILES', 'Property Managers');
 jr_define('_JOMRES_COM_MR_GENERALCONFIGDESC', 'Property Configuration');
