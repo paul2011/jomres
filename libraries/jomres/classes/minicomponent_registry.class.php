@@ -1,14 +1,4 @@
 <?php
-/**
- * Core file.
- *
- * @author Vince Wooll <sales@jomres.net>
- *
- * @version Jomres 9.9.15
- *
- * @copyright	2005-2017 Vince Wooll
- * Jomres (tm) PHP, CSS & Javascript files are released under both MIT and GPL2 licenses. This means that you can choose the license that best suits your project, and use it accordingly
- **/
 
 // ################################################################
 defined('_JOMRES_INITCHECK') or die('');
@@ -74,12 +64,6 @@ class minicomponent_registry
 
     public function regenerate_registry($force_reload_allowed = false)
     {
-		if (!defined('AUTO_UPGRADE')) { // We don't want to do this if the installer is running this script
-			jomres_cmsspecific_addheaddata('javascript', JOMRES_ROOT_DIRECTORY.'/javascript/', 'jquery.blockUI.js');
-		}
-		
-		
-		
         $siteConfig = jomres_singleton_abstract::getInstance('jomres_config_site_singleton');
         $jrConfig = $siteConfig->get();
 
@@ -94,6 +78,8 @@ class minicomponent_registry
         $this->getMiniComponentCMSSpecificClasses();
 
         if ($jrConfig[ 'safe_mode' ] == '0') {
+            $this->getMiniCorePluginsClasses();
+            $this->getMiniComponentRemoteClasses();
 
             if (!defined('AUTO_UPGRADE')) {
                 $this->getMiniComponentCmsTemplateClasses();
@@ -137,20 +123,7 @@ class minicomponent_registry
 
         //reload page if registry changed
         if ($this->original_filesize != $this->new_filesize && $force_reload_allowed) {
-			if (!defined('AUTO_UPGRADE')) { // We don't want to do this if the installer is running this script
-            echo "<script>	jomresJquery.blockUI({ 
-			message: '<h3>Reloading the page as the registry has changed</h3>',
-			baseZ: 1030,
-			css: {
-				border: 'none', 
-				padding: '15px', 
-				backgroundColor: '#000', 
-				'-webkit-border-radius': '10px', 
-				'-moz-border-radius': '10px', 
-				opacity: .8, 
-				color: '#fff' 
-			} });</script>";
-				}
+            echo "<script>alert('Reloading current page as minicomponents registry has changed');</script>";
             echo '<script>window.location.reload();</script>';
         }
     }
@@ -242,9 +215,40 @@ $this->miniComponentDirectories = ' .var_export($this->miniComponentDirectories,
         }
     }
 
+    // Reads in class files from the components table and inserts them into the registeredClasses array
+    public function getMiniComponentRemoteClasses()
+    {
+        $jrePath = JOMRES_REMOTEPLUGINS_ABSPATH;
+        $d = @dir($jrePath);
+        $docs = array();
+        if ($d) {
+            while (false !== ($entry = $d->read())) {
+                $filename = $entry;
+                if (substr($entry, 0, 1) != '.') {
+                    $docs[ ] = $entry;
+                }
+            }
+            $d->close();
+            if (!empty($docs)) {
+                sort($docs);
+                foreach ($docs as $doc) {
+                    $listdir = $jrePath.$doc.JRDS;
+                    $dr = @dir($listdir);
+                    if ($dr) {
+                        while (false !== ($entry = $dr->read())) {
+                            $filename = $entry;
+                            $this->registerComponentFile($listdir, $filename, 'remotecomponent');
+                        }
+                        $dr->close();
+                    }
+                }
+            }
+        }
+    }
+
     public function getMiniComponentCMSSpecificClasses()
     {
-        $jrePath = _JOMRES_DETECTED_CMS_SPECIFIC_FILES;
+        $jrePath = JOMRES_CMSSPECIFIC_ABSPATH._JOMRES_DETECTED_CMS.JRDS;
         $d = @dir($jrePath);
         if ($d) {
             while (false !== ($entry = $d->read())) {
@@ -258,7 +262,7 @@ $this->miniComponentDirectories = ' .var_export($this->miniComponentDirectories,
     // Reads in class files from the events folder and inserts them into the registeredClasses array
     public function getMiniComponentCoreClasses()
     {
-        $listdir = JOMRES_APP_ABSPATH;
+        $listdir = JOMRESCONFIG_ABSOLUTE_PATH.JOMRES_ROOT_DIRECTORY.JRDS.'core-minicomponents'.JRDS;
         $d = @dir($listdir);
         if ($d) {
             while (false !== ($entry = $d->read())) {
@@ -266,6 +270,36 @@ $this->miniComponentDirectories = ' .var_export($this->miniComponentDirectories,
                 $this->registerComponentFile($listdir, $filename, 'core');
             }
             $d->close();
+        }
+    }
+
+    public function getMiniCorePluginsClasses()
+    {
+        $jrePath = JOMRES_COREPLUGINS_ABSPATH;
+        $d = @dir($jrePath);
+        $docs = array();
+        if ($d) {
+            while (false !== ($entry = $d->read())) {
+                $filename = $entry;
+                if (substr($entry, 0, 1) != '.') {
+                    $docs[ ] = $entry;
+                }
+            }
+            $d->close();
+            if (!empty($docs)) {
+                sort($docs);
+                foreach ($docs as $doc) {
+                    $listdir = $jrePath.$doc.JRDS;
+                    $dr = @dir($listdir);
+                    if ($dr) {
+                        while (false !== ($entry = $dr->read())) {
+                            $filename = $entry;
+                            $this->registerComponentFile($listdir, $filename, 'core-plugin');
+                        }
+                        $dr->close();
+                    }
+                }
+            }
         }
     }
 
