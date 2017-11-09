@@ -1,7 +1,5 @@
 # jomres
 
-Updated by Mark E.
-
 This is Jomres 9.9.15 with some new Plugins installed each day or week.
 These Plugins are now part of Jomres Core-Plugins. In the Plugin Manager you will not see these installed, but they are.
 
