@@ -1,5 +1,10 @@
 Jomres 9.9.15
 
+Upload these files to a dir named "jomres"
+Run "install_jomres.php", and follow the info.
+
+---------------------------
+ 
 This is Jomres 9.9.15 with some new Plugins installed each day or week.
 These Plugins are now part of Jomres Core-Plugins. In the Plugin Manager you will not see these installed, but they are.
 
